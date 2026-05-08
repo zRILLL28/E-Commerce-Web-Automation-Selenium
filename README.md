@@ -131,4 +131,9 @@ Laporan HTML akan otomatis dibuat di folder `reports/` setelah menjalankan test.
 
 ---
 
+## Demo
+![Demo](Demo.gif)
+
+---
+
 > Proyek ini menggunakan situs demo publik [SauceDemo](https://www.saucedemo.com) yang memang disediakan khusus untuk latihan automation testing.

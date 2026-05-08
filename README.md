@@ -53,8 +53,8 @@ ecommerce-qa-selenium/
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/<username>/ecommerce-qa-selenium.git
-cd ecommerce-qa-selenium
+git clone https://github.com/zRILLL28/E-Commerce-Web-Automation-Selenium.git
+cd E-Commerce-Web-Automation-Selenium
 ```
 
 ### 2. Buat Virtual Environment

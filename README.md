@@ -1,63 +1,63 @@
 # 🛒 E-Commerce QA Automation — Selenium Python
 
-Proyek **Software Quality Assurance (SQA)** berbasis **Selenium + Python + Pytest** untuk menguji fungsionalitas web e-commerce demo [SauceDemo](https://www.saucedemo.com).
+**Software Quality Assurance (SQA)** project using **Selenium + Python + Pytest** to automate functional testing for the [SauceDemo](https://www.saucedemo.com) e-commerce demo website.
 
 ---
 
-## 📋 Fitur yang Diuji
+## 📋 Tested Features
 
-| Modul | Test Case | Jumlah TC |
+| Module | Test Cases | Total TC |
 |---|---|---|
-| 🔐 **Login** | Login valid, locked user, kredensial salah, field kosong, logout | 5 |
-| 🛍️ **Produk** | Tampilan halaman, jumlah produk, sorting A-Z, sorting harga, add to cart | 5 |
-| 🛒 **Keranjang** | Produk muncul di cart, hapus item, cart kosong, continue shopping | 4 |
-| 💳 **Checkout** | Checkout sukses (E2E), form kosong, summary harga, cancel | 4 |
+| 🔐 **Login** | Valid login, locked user, invalid credentials, empty fields, logout | 5 |
+| 🛍️ **Products** | Page display, product count, A-Z sorting, price sorting, add to cart | 5 |
+| 🛒 **Cart** | Product displayed in cart, remove item, empty cart, continue shopping | 4 |
+| 💳 **Checkout** | Successful checkout (E2E), empty form validation, price summary, cancel checkout | 4 |
 
 **Total: 18 Test Cases**
 
 ---
 
-## 🗂️ Struktur Project
+## 🗂️ Project Structure
 
-```
+```bash
 ecommerce-qa-selenium/
 │
 ├── pages/                  # Page Object Model (POM)
-│   ├── base_page.py        # Base class dengan method umum
-│   ├── login_page.py       # Halaman Login
-│   ├── inventory_page.py   # Halaman Daftar Produk
-│   ├── cart_page.py        # Halaman Keranjang
-│   └── checkout_page.py    # Halaman Checkout & Konfirmasi
+│   ├── base_page.py        # Base class with reusable methods
+│   ├── login_page.py       # Login Page
+│   ├── inventory_page.py   # Product Inventory Page
+│   ├── cart_page.py        # Cart Page
+│   └── checkout_page.py    # Checkout & Confirmation Page
 │
 ├── tests/                  # Test Cases
-│   ├── test_login.py       # Test Suite: Login
-│   ├── test_product.py     # Test Suite: Produk
-│   ├── test_cart.py        # Test Suite: Keranjang
-│   └── test_checkout.py    # Test Suite: Checkout
+│   ├── test_login.py       # Login Test Suite
+│   ├── test_product.py     # Product Test Suite
+│   ├── test_cart.py        # Cart Test Suite
+│   └── test_checkout.py    # Checkout Test Suite
 │
 ├── utils/
-│   └── test_data.py        # Data untuk test (user, customer info, dll)
+│   └── test_data.py        # Test data (users, customer info, etc.)
 │
-├── reports/                # HTML report hasil test (auto-generated)
-├── screenshots/            # Screenshot otomatis jika test gagal
+├── reports/                # Auto-generated HTML test reports
+├── screenshots/            # Automatically captured screenshots on failure
 │
-├── conftest.py             # Konfigurasi WebDriver & Fixtures
-├── pytest.ini              # Konfigurasi Pytest
-├── requirements.txt        # Dependency Python
+├── conftest.py             # WebDriver configuration & fixtures
+├── pytest.ini              # Pytest configuration
+├── requirements.txt        # Python dependencies
 └── README.md
 ```
 
 ---
 
-## ⚙️ Cara Menjalankan
+## ⚙️ How to Run
 
 ### 1. Clone Repository
-```bash
+```Bash
 git clone https://github.com/zRILLL28/E-Commerce-Web-Automation-Selenium.git
 cd E-Commerce-Web-Automation-Selenium
 ```
 
-### 2. Buat Virtual Environment
+### 2. Create Virtual Environment
 ```bash
 python -m venv venv
 source venv/bin/activate        # Mac/Linux
@@ -69,30 +69,30 @@ venv\Scripts\activate           # Windows
 pip install -r requirements.txt
 ```
 
-### 4. Jalankan Semua Test
+### 4. Run All Test
 ```bash
 pytest
 ```
 
-### 5. Jalankan Headless (tanpa buka browser)
+### 5. Run in Headless Mode (without opening browser)
 ```bash
 pytest --headless
 ```
 
-### 6. Jalankan Test Spesifik
+### 6. Run Specific Tests
 ```bash
-# Hanya test login
+# Run login tests only
 pytest tests/test_login.py
 
-# Hanya test checkout
+# Only test checkout
 pytest tests/test_checkout.py
 
-# Jalankan satu test case tertentu
+# Run a specific test case
 pytest tests/test_login.py::TestLogin::test_TC_LOGIN_001_login_valid
 ```
 
-### 7. Lihat Laporan HTML
-Setelah test selesai, buka file berikut di browser:
+### 7. View HTML Report
+After the test execution is completed, open the following file in your browser:
 ```
 reports/report.html
 ```
@@ -103,7 +103,7 @@ reports/report.html
 
 | Tool | Versi | Fungsi |
 |---|---|---|
-| Python | 3.10+ | Bahasa pemrograman utama |
+| Python | 3.10+ | Main programming language |
 | Selenium | 4.x | Browser automation |
 | Pytest | 8.x | Test framework |
 | pytest-html | 4.x | HTML report generator |
@@ -111,23 +111,23 @@ reports/report.html
 
 ---
 
-## 🏗️ Konsep yang Diterapkan
+## 🏗️ Implemented Concepts
 
-- **Page Object Model (POM)** — Memisahkan logika UI dari logika test
-- **Fixtures** — Setup/teardown WebDriver yang reusable
-- **Screenshot on Failure** — Otomatis capture screenshot jika test gagal
-- **Test Data Separation** — Data test dipisah ke file `utils/test_data.py`
-- **HTML Reporting** — Laporan test yang mudah dibaca
+- **Page Object Model (POM)** — Separates UI logic from test logic
+- **Fixtures** — Reusable WebDriver setup/teardown
+- **Screenshot on Failure** — Automatically captures screenshots when tests fail
+- **Test Data Separation** — Test data stored separately in `utils/test_data.py`
+- **HTML Reporting** — Easy-to-read test execution reports
 
 ---
 
-## 📸 Contoh Laporan
+## 📸 Report Example
 
-Laporan HTML akan otomatis dibuat di folder `reports/` setelah menjalankan test. Laporan ini berisi:
-- ✅ Status tiap test case (PASSED / FAILED / ERROR)
-- ⏱️ Durasi eksekusi
-- 🔍 Detail error jika test gagal
-- 📸 Link screenshot untuk test yang gagal
+An HTML report will be automatically generated inside the reports/ folder after running the tests. The report includes:
+- ✅ Test case status (PASSED / FAILED / ERROR)
+- ⏱️ Execution duration
+- 🔍 Error details for failed tests
+- 📸 Screenshot links for failed tests
 
 ---
 
@@ -136,4 +136,4 @@ Laporan HTML akan otomatis dibuat di folder `reports/` setelah menjalankan test.
 
 ---
 
-> Proyek ini menggunakan situs demo publik [SauceDemo](https://www.saucedemo.com) yang memang disediakan khusus untuk latihan automation testing.
+> This project uses the public demo website [SauceDemo](https://www.saucedemo.com) which is specifically designed for automation testing practice.
